@@ -3,7 +3,7 @@
 Cette application permet à ses utilisateurs de louer des biens immobiliers. Elle permet de :<br>
 - Lister les profils utilisateurs et accéder aux détails de chaque profil <br>
 - Lister les biens et accéder aux détails de chaque bien <br>
-<br><br>
+<br>
 
 Le projet est disponible publiquement en version stable : [Holiday Homes](https://oc-projet13-latest.onrender.com/)<br>
 La documentation complète est disponible sur [Read The Docs](https://gg-oc-projet13.readthedocs.io/fr/latest/index.html)<br>
@@ -77,7 +77,7 @@ Ouvrez votre navigateur et tapez dans la barre d'adresse :
 ## ⚙️ Fonctionnement du programme
 
 L'application comporte différentes sections accessibles en cliquant sur les boutons correspondants.
-<br><br>
+<br>
 
 Il est possible de visiter la liste des profils utilisateurs et des biens disponibles.<br>
 En cliquant sur un élément, il est possible d'accéder aux détails de celui-ci.
