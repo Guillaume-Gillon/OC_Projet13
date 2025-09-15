@@ -28,7 +28,7 @@ language = "fr"
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "sphinx_rtd_theme"
-html_static_path = ["_static"]
+# html_static_path = ["_static"]
 
 # Ajout du chemin vers le répertoire racine du projet Django
 # Cela permet à Django de trouver settings.py
