@@ -21,23 +21,27 @@ Les URLs
 
 * **Pages des locations**
 
-    - **URL** : */lettings/*
-    - **Vue** : *lt_views.lettings_index*
-    - **Description** : Mène à la page d'index qui liste toutes les locations disponibles.
+    + **Tous les éléments**
+        - **URL** : */lettings/*
+        - **Vue** : *lt_views.lettings_index*
+        - **Description** : Mène à la page d'index qui liste toutes les locations disponibles.
 
-    + **URL** : */lettings/<int:letting_id>/*
-    + **Vue** : *lt_views.letting*
-    + **Description** : Affiche les détails d'une location spécifique. <int:letting_id> est un paramètre qui capture l'identifiant numérique de la location.
+    + **Détail d'un élément**
+        - **URL** : */lettings/<int:letting_id>/*
+        - **Vue** : *lt_views.letting*
+        - **Description** : Affiche les détails d'une location spécifique. <int:letting_id> est un paramètre qui capture l'identifiant numérique de la location.
 
 * **Pages des profils**
 
-    - **URL** : */profiles/*
-    - **Vue** : *pf_views.profiles_index*
-    - **Description** : Mène à la page d'index qui liste tous les profils d'utilisateurs.
+    + **Tous les éléments**
+        - **URL** : */profiles/*
+        - **Vue** : *pf_views.profiles_index*
+        - **Description** : Mène à la page d'index qui liste tous les profils d'utilisateurs.
 
-    + **URL** : */profiles/<str:username>/*
-    + **Vue** : *pf_views.profile*
-    + **Description** : Affiche le profil d'un utilisateur spécifique. <str:username> est un paramètre qui capture le nom d'utilisateur.
+    + **Détail d'un élément**
+        - **URL** : */profiles/<str:username>/*
+        - **Vue** : *pf_views.profile*
+        - **Description** : Affiche le profil d'un utilisateur spécifique. <str:username> est un paramètre qui capture le nom d'utilisateur.
 
 * **Page de gestion**
 
@@ -47,17 +51,20 @@ Les URLs
 
 * **Pages d'erreur**
 
-    - **URL** : */page-404/*
-    - **Vue** : *TemplateView.as_view(template_name="404.html")*
-    - **Description** : Affiche une page d'erreur standard pour les ressources non trouvées.
+    + **404**
+        - **URL** : */page-404/*
+        - **Vue** : *TemplateView.as_view(template_name="404.html")*
+        - **Description** : Affiche une page d'erreur standard pour les ressources non trouvées.
 
-    + **URL** : */page-500/*
-    + **Vue** : *TemplateView.as_view(template_name="500.html")*
-    + **Description** : Affiche une page d'erreur standard pour les erreurs internes du serveur.
+    + **500**
+        - **URL** : */page-500/*
+        - **Vue** : *TemplateView.as_view(template_name="500.html")*
+        - **Description** : Affiche une page d'erreur standard pour les erreurs internes du serveur.
 
-    - **URL** : */error-test-500/*
-    - **Vue** : *views.server_error*
-    - **Description** : Sert de point de test pour déclencher une erreur 500 et vérifier l'affichage de la page d'erreur correspondante.
+    + **500 (tests)**
+        - **URL** : */error-test-500/*
+        - **Vue** : *views.server_error*
+        - **Description** : Sert de point de test pour déclencher une erreur 500 et vérifier l'affichage de la page d'erreur correspondante.
 
 .. _apps_interface:
 
