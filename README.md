@@ -1,77 +1,83 @@
-## Résumé
+# OC-Projet13 : Mettez à l'échelle une application Django en utilisant une architecture modulaire.
 
-Site web d'Orange County Lettings
+Cette application permet à ses utilisateurs de louer des biens immobiliers. Elle permet de :<br>
+- Lister les profils utilisateurs et accéder aux détails de chaque profil <br>
+- Lister les biens et accéder aux détails de chaque bien <br>
+<br><br>
 
-## Développement local
+Le projet est disponible publiquement en version stable : [Holiday Homes](https://oc-projet13-latest.onrender.com/)<br>
+La documentation complète est disponible sur [Read The Docs](https://gg-oc-projet13.readthedocs.io/fr/latest/index.html)<br>
 
-### Prérequis
+> [!NOTE]
+> Testé sous Ubuntu 24.04 - Python 3.12.3
 
-- Compte GitHub avec accès en lecture à ce repository
-- Git CLI
-- SQLite3 CLI
-- Interpréteur Python, version 3.6 ou supérieure
+## ✅ Prérequis
 
-Dans le reste de la documentation sur le développement local, il est supposé que la commande `python` de votre OS shell exécute l'interpréteur Python ci-dessus (à moins qu'un environnement virtuel ne soit activé).
+Pour installer ce programme, vous aurez besoin d'une connexion internet.<br>
+Le programme peut être exécuté en local à des fins de développement.<br>
+<br>
+Python doit être installé sur votre ordinateur (version 3.12.3 ou supérieur).<br>
+<br>
+L'installateur **pip** doit également être disponible sur votre machine pour installer les dépendances.
+Il est possible d'utiliser **pipenv** pour centraliser la gestion des modules, dépendances et environnement virtuel.
 
-### macOS / Linux
+## 📦 Installation et exécution du programme
 
-#### Cloner le repository
+<details>
+<summary>📍 Etape 1 - Installer git</summary><br>
 
-- `cd /path/to/put/project/in`
-- `git clone https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git`
+Pour télécharger ce programme, vérifiez que git est bien installé sur votre poste.<br>
+Vous pouvez l'installer en suivant les instructions fournies sur le site [git-scm.com](https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git)
 
-#### Créer l'environnement virtuel
+</details>
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `python -m venv venv`
-- `apt-get install python3-venv` (Si l'étape précédente comporte des erreurs avec un paquet non trouvé sur Ubuntu)
-- Activer l'environnement `source venv/bin/activate`
-- Confirmer que la commande `python` exécute l'interpréteur Python dans l'environnement virtuel
-`which python`
-- Confirmer que la version de l'interpréteur Python est la version 3.6 ou supérieure `python --version`
-- Confirmer que la commande `pip` exécute l'exécutable pip dans l'environnement virtuel, `which pip`
-- Pour désactiver l'environnement, `deactivate`
+<details>
+<summary>📍 Etape 2 - Cloner le dépôt contenant le programme</summary><br>
 
-#### Exécuter le site
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `pip install --requirement requirements.txt`
-- `python manage.py runserver`
-- Aller sur `http://localhost:8000` dans un navigateur.
-- Confirmer que le site fonctionne et qu'il est possible de naviguer (vous devriez voir plusieurs profils et locations).
+Placez-vous dans le dossier souhaité et utilisez la commande suivante :
 
-#### Linting
+``git clone https://github.com/Guillaume-Gillon/OC_Projet13.git``
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `flake8`
+</details>
 
-#### Tests unitaires
+<details>
+<summary>📍 Etape 3 - Créer et activer un evironnement virtuel</summary><br>
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `pytest`
+Créez un environnement virtuel avec la commande<br>
+``python3 -m venv env``<br>
 
-#### Base de données
+Activez cet environnement avec la commande<br>
+``source env/bin/activate``
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- Ouvrir une session shell `sqlite3`
-- Se connecter à la base de données `.open oc-lettings-site.sqlite3`
-- Afficher les tables dans la base de données `.tables`
-- Afficher les colonnes dans le tableau des profils, `pragma table_info(Python-OC-Lettings-FR_profile);`
-- Lancer une requête sur la table des profils, `select user_id, favorite_city from
-  Python-OC-Lettings-FR_profile where favorite_city like 'B%';`
-- `.quit` pour quitter
+</details>
 
-#### Panel d'administration
+<details>
+<summary>📍 Etape 4 - Installer les dépendances</summary><br>
 
-- Aller sur `http://localhost:8000/admin`
-- Connectez-vous avec l'utilisateur `admin`, mot de passe `Abc1234!`
+Pour que ce programme s'exécute, vous aurez besoin de plusieurs packages additionnels listés dans le fichier requirements.txt.<br>
 
-### Windows
+Exécutez la commande <br>
+``pip install -r requirements.txt``
 
-Utilisation de PowerShell, comme ci-dessus sauf :
+</details>
 
-- Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
-- Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+<details>
+<summary>📍 Etape 5 - Exécuter l'application</summary><br>
+
+Exécutez les commandes suivantes :<br>
+``python manage.py collectstatic --noinputut``
+``RENDER_EXTERNAL_HOSTNAME="127.0.0.1" python3 manage.py runserver``
+
+Ouvrez votre navigateur et tapez dans la barre d'adresse :
+``127.0.0.1:8000``
+
+</details>
+
+## ⚙️ Fonctionnement du programme
+
+L'application comporte différentes sections accessibles en cliquant sur les boutons correspondants.
+<br><br>
+
+Il est possible de visiter la liste des profils utilisateurs et des biens disponibles.<br>
+En cliquant sur un élément, il est possible d'accéder aux détails de celui-ci.
