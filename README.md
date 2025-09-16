@@ -101,8 +101,6 @@ Pour créer un fichier de rapport, tapez ``flake8 > flake8_report.txt``
 
 Il est possible d'accéder à l'interface administrateur de Django.
 
-Exécutez l'application (voir étape 5 ci-dessus) puis accédez à l'adresse :
-``http://127.0.0.1:8000/admin/``
+Exécutez l'application (voir étape 5 ci-dessus) puis accédez à l'adresse ``http://127.0.0.1:8000/admin/``
 
-Entrez le nom d'utilisateur et le mot de passe :
-admin - Abc1234!
+Entrez le nom d'utilisateur et le mot de passe : admin - Abc1234!
