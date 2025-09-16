@@ -87,15 +87,14 @@ En cliquant sur un élément, il est possible d'accéder aux détails de celui-c
 
 ### Tests
 Il est possible d'exécuter les jeux de tests.<br>
-Activez l'environnement virtuel avec ``source env/bin/activate`` puis tapez la commande :<br>
+Activez l'environnement virtuel (voir étape 3 ci-dessus) puis tapez la commande :<br>
 ``coverage run manage.py test && coverage report``
 
 ### Linting
 
 L'outil flake8 est disponible pour vérifier les erreurs de linting.
 
-Activez l'environnement virtuel ``source env/bin/activate`` puis tapez la commande ``flake8``<br>
-
+Activez l'environnement virtuel (voir étape 3 ci-dessus) puis tapez la commande ``flake8``
 Pour créer un fichier de rapport, tapez ``flake8 > flake8_report.txt``
 
 ## 🛠️ Accès à l'interface d'administration
