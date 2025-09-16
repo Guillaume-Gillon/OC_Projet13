@@ -17,5 +17,3 @@ urlpatterns = [
     path("page-500/", TemplateView.as_view(template_name="500.html"), name="page_500"),
     path("error-test-500/", views.server_error, name="error_test_500"),
 ]
-
-# test
