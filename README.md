@@ -11,6 +11,8 @@ La documentation complète est disponible sur [Read The Docs](https://gg-oc-proj
 
 > [!NOTE]
 > Testé sous Ubuntu 24.04 - Python 3.12.3
+> Cette documentation est applicable sous cette configuration.
+> Les commandes peuvent différer sour un autre OS.
 
 ## ✅ Prérequis
 
