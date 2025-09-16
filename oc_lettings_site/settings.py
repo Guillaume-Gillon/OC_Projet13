@@ -1,4 +1,7 @@
 import os
+from dotenv import load_dotenv
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 from pathlib import Path
 
@@ -122,3 +125,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # Personnal Adds
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+load_dotenv("sentry_config.env")
+SENTRY_DSN = os.getenv("SENTRY_DSN")
+
+sentry_sdk.init(dsn=SENTRY_DSN, integrations=[DjangoIntegration()])
