@@ -87,7 +87,8 @@ En cliquant sur un élément, il est possible d'accéder aux détails de celui-c
 
 ### Tests
 Il est possible d'exécuter les jeux de tests.<br>
-Activez l'environnement virtuel avec ``source env/bin/activate`` puis tapez la commande ``coverage run manage.py test && coverage report``
+Activez l'environnement virtuel avec ``source env/bin/activate`` puis tapez la commande :<br>
+``coverage run manage.py test && coverage report``
 
 ### Linting
 
