@@ -10,8 +10,8 @@ Le projet est disponible publiquement en version stable : [Holiday Homes](https:
 La documentation complète est disponible sur [Read The Docs](https://gg-oc-projet13.readthedocs.io/fr/latest/index.html)<br>
 
 > [!NOTE]
-> Testé sous Ubuntu 24.04 - Python 3.12.3
-> Cette documentation est applicable sous cette configuration.
+> Testé sous Ubuntu 24.04 - Python 3.12.3<br>
+> Cette documentation est applicable sous cette configuration.<br>
 > Les commandes peuvent différer sour un autre OS.
 
 ## ✅ Prérequis
