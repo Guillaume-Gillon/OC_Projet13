@@ -94,7 +94,7 @@ Activez l'environnement virtuel (voir étape 3 ci-dessus) puis tapez la commande
 
 L'outil flake8 est disponible pour vérifier les erreurs de linting.
 
-Activez l'environnement virtuel (voir étape 3 ci-dessus) puis tapez la commande ``flake8``
+Activez l'environnement virtuel (voir étape 3 ci-dessus) puis tapez la commande ``flake8``.<br>
 Pour créer un fichier de rapport, tapez ``flake8 > flake8_report.txt``
 
 ## 🛠️ Accès à l'interface d'administration
