@@ -69,7 +69,7 @@ Exécutez la commande <br>
 <summary>📍 Etape 5 - Exécuter l'application</summary><br>
 
 Exécutez les commandes suivantes :<br>
-``python manage.py collectstatic --noinputut``<br>
+``python manage.py collectstatic --noinput``<br>
 ``RENDER_EXTERNAL_HOSTNAME="127.0.0.1" python3 manage.py runserver``
 
 Ouvrez votre navigateur et tapez dans la barre d'adresse :
