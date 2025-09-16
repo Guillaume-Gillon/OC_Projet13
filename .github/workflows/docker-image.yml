@@ -45,6 +45,8 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/oc_projet13:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/oc_projet13:latest
+          cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/oc_projet13:latest,mode=max
 
   deploy:
     runs-on: ubuntu-latest
