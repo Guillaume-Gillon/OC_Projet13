@@ -1,6 +1,7 @@
 # OC-Projet13 : Mettez à l'échelle une application Django en utilisant une architecture modulaire.
 
-Cette application permet à ses utilisateurs de louer des biens immobiliers. Elle permet de :<br>
+Cette application permet à ses utilisateurs de louer des biens immobiliers.<br>
+Il est possible de :<br>
 - Lister les profils utilisateurs et accéder aux détails de chaque profil <br>
 - Lister les biens et accéder aux détails de chaque bien <br>
 <br>
