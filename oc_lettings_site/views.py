@@ -8,6 +8,11 @@ pour gérer les erreurs 404 (Page non trouvée) et 500 (Erreur serveur).
 from django.shortcuts import render
 from django.http import Http404, HttpResponse
 
+import logging
+
+
+logger = logging.getLogger(__name__)
+
 
 def index(request):
     """
@@ -37,6 +42,7 @@ def page_not_found(request):
     Raises:
         Http404: Toujours levée pour simuler une erreur de page non trouvée.
     """
+    logger.error("Page d'erreur 404 appelée.")
     raise Http404  # pragma: no cover
 
 
