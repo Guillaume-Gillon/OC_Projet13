@@ -82,3 +82,36 @@ L'application comporte différentes sections accessibles en cliquant sur les bou
 
 Il est possible de visiter la liste des profils utilisateurs et des biens disponibles.<br>
 En cliquant sur un élément, il est possible d'accéder aux détails de celui-ci.
+
+## 🚀 Exécution des fontionnalités additionnelles
+
+### Tests
+Il est possible d'exécuter les jeux de tests.<br>
+Activez l'environnement virtuel :
+``source env/bin/activate``
+
+Puis tapez la commande :
+``coverage run manage.py test && coverage report``
+
+### Linting
+
+L'outil flake8 est disponible pour vérifier les erreurs de linting.
+
+Activez l'environnement virtuel :
+``source env/bin/activate``
+
+Pis tapez la commande :
+``flake8``
+
+Pour créer un fichier de rapport, tapez :
+``flake8 > flake8_report.txt``
+
+## 🛠️ Accès à l'interface d'administration
+
+Il est possible d'accéder à l'interface administrateur de Django.
+
+Exécutez l'application (voir étape 5 ci-dessus) puis accédez à l'adresse :
+``http://127.0.0.1:8000/admin/``
+
+Entrez le nom d'utilisateur et le mot de passe :
+admin - Abc1234!
