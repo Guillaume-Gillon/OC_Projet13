@@ -99,10 +99,53 @@ L'outil flake8 est disponible pour vérifier les erreurs de linting.
 Activez l'environnement virtuel (voir étape 3 ci-dessus) puis tapez la commande ``flake8``.<br>
 Pour créer un fichier de rapport, tapez ``flake8 > flake8_report.txt``
 
-## 🛠️ Accès à l'interface d'administration
+## 🔐 Accès à l'interface d'administration
 
 Il est possible d'accéder à l'interface administrateur de Django.
 
 Exécutez l'application (voir étape 5 ci-dessus) puis accédez à l'adresse ``http://127.0.0.1:8000/admin/``
 
 Entrez le nom d'utilisateur et le mot de passe : admin - Abc1234!
+
+## 💻 Déploiement
+
+Cette section fournit un aperçu de la stratégie de déploiement continu mise en place pour ce projet. Le processus est entièrement automatisé via un workflow GitHub Actions qui assure le bon fonctionnement de la chaîne de déploiement, de la mise à jour du code jusqu'au déploiement sur la plateforme d'hébergement.
+
+### Fonctionnement du déploiement
+
+Le déploiement est orchestré par un workflow GitHub Actions qui suit les étapes suivantes, déclenchées par un push sur la branche main :
+
+    1- Tests unitaires et d'intégration : Le code est d'abord compilé et testé pour s'assurer de sa qualité et de sa fiabilité.
+
+    2- Conteneurisation et publication : Si les tests réussissent, une image Docker est construite et taguée de manière unique avec l'ID du commit. Cette image est ensuite poussée sur Docker Hub. Un second tag, latest, est également appliqué pour indiquer la dernière version stable.
+
+    3- Déclenchement du déploiement : Une fois l'image publiée, le workflow utilise un webhook pour déclencher manuellement un déploiement sur la plateforme Render. Render récupère alors l'image Docker taguée latest et la déploie automatiquement, mettant à jour l'application en production.
+
+Ce processus garantit que seule une version du code validée et testée peut être déployée.
+
+### Configuration requise
+
+Pour que le déploiement fonctionne, les secrets suivants doivent être configurés dans les paramètres du dépôt GitHub (Settings > Secrets and variables > Actions), pour permettre au workflow d'accéder aux services externes :
+
+    DOCKERHUB_USERNAME : Votre nom d'utilisateur Docker Hub.
+
+    DOCKERHUB_TOKEN : Un token d'accès personnel généré sur Docker Hub, avec les droits en lecture et écriture pour votre dépôt Docker.
+
+    RENDER_DEPLOY_HOOK : L'URL du webhook de déploiement fournie par Render, utilisée pour déclencher les déploiements.
+
+### Étapes pour effectuer le déploiement
+
+Le déploiement est un processus automatisé qui ne nécessite aucune intervention manuelle une fois la configuration initiale en place.
+Pour mettre à jour l'application en production :
+
+    1- Assurez-vous que toutes vos modifications ont été validées et testées localement.
+
+    2- Créez une Pull Request (PR) pour fusionner vos changements de votre branche de fonctionnalité vers la branche main.
+
+    3- Une fois la PR approuvée, fusionnez-la.
+
+    4- Le workflow GitHub Actions se déclenchera automatiquement sur le push vers la branche main et gérera le processus de déploiement de bout en bout.
+
+Si le déploiement échoue, vérifiez les logs du workflow dans l'onglet Actions de votre dépôt GitHub pour identifier l'étape responsable de l'échec.
+
+Un push sur la branche QA déclenche la compilation et l'exécution des tests.
