@@ -62,11 +62,4 @@ jobs:
     if: github.ref_name == 'main'
     steps:
       - name: Trigger Render Deploy Hook
-        env:
-          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK }}
-          DOCKER_IMAGE_TAG: ${{ secrets.DOCKERHUB_USERNAME }}/oc_projet13:${{ github.sha }}
-        run: |
-          # Forme l'URL complète avec le paramètre imgURL pour spécifier le tag
-          # Le paramètre imgURL doit être encodé en URL, le `|` dans la syntaxe `run` aide à le formater correctement.
-          DEPLOY_URL="${RENDER_DEPLOY_HOOK_URL}?imgURL=${DOCKER_IMAGE_TAG}"
-          curl -X POST "$DEPLOY_URL"
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}?imgURL=${{ secrets.DOCKERHUB_USERNAME }}/oc_projet13:${{ github.sha }}
