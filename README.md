@@ -115,11 +115,9 @@ Cette section fournit un aperçu de la stratégie de déploiement continu mise e
 
 Le déploiement est orchestré par un workflow GitHub Actions qui suit les étapes suivantes, déclenchées par un push sur la branche main :
 
-    1- Tests unitaires et d'intégration : Le code est d'abord compilé et testé pour s'assurer de sa qualité et de sa fiabilité.
-
-    2- Conteneurisation et publication : Si les tests réussissent, une image Docker est construite et taguée de manière unique avec l'ID du commit. Cette image est ensuite poussée sur Docker Hub. Un second tag, latest, est également appliqué pour indiquer la dernière version stable.
-
-    3- Déclenchement du déploiement : Une fois l'image publiée, le workflow utilise un webhook pour déclencher manuellement un déploiement sur la plateforme Render. Render récupère alors l'image Docker taguée latest et la déploie automatiquement, mettant à jour l'application en production.
+- Tests unitaires et d'intégration : Le code est d'abord compilé et testé pour s'assurer de sa qualité et de sa fiabilité.<br>
+- Conteneurisation et publication : Si les tests réussissent, une image Docker est construite et taguée de manière unique avec l'ID du commit. Cette image est ensuite poussée sur Docker Hub. Un second tag, latest, est également appliqué pour indiquer la dernière version stable.<br>
+- Déclenchement du déploiement : Une fois l'image publiée, le workflow utilise un webhook pour déclencher manuellement un déploiement sur la plateforme Render, qui récupère alors l'image Docker taguée latest et la déploie automatiquement en production.<br>
 
 Ce processus garantit que seule une version du code validée et testée peut être déployée.
 
