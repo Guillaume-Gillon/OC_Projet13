@@ -127,19 +127,19 @@ Ce processus garantit que seule une version du code validée et testée peut êt
 
 Pour que le déploiement fonctionne, les secrets suivants doivent être configurés dans les paramètres du dépôt GitHub (Settings > Secrets and variables > Actions), pour permettre au workflow d'accéder aux services externes :
 
-DOCKERHUB_USERNAME : Votre nom d'utilisateur Docker Hub.
-DOCKERHUB_TOKEN : Un token d'accès personnel généré sur Docker Hub, avec les droits en lecture et écriture pour votre dépôt Docker.
-RENDER_DEPLOY_HOOK : L'URL du webhook de déploiement fournie par Render, utilisée pour déclencher les déploiements.
+DOCKERHUB_USERNAME : Votre nom d'utilisateur Docker Hub.<br>
+DOCKERHUB_TOKEN : Un token d'accès personnel généré sur Docker Hub, avec les droits en lecture et écriture pour votre dépôt Docker.<br>
+RENDER_DEPLOY_HOOK : L'URL du webhook de déploiement fournie par Render, utilisée pour déclencher les déploiements.<br>
 
 ### Étapes pour effectuer le déploiement
 
 Le déploiement est un processus automatisé qui ne nécessite aucune intervention manuelle une fois la configuration initiale en place.
 Pour mettre à jour l'application en production :
 
-Assurez-vous que toutes vos modifications ont été validées et testées localement.
-Créez une Pull Request (PR) pour fusionner vos changements de votre branche de fonctionnalité vers la branche main.
-Une fois la PR approuvée, fusionnez-la.
-Le workflow GitHub Actions se déclenchera automatiquement sur le push vers la branche main et gérera le processus de déploiement de bout en bout.
+Assurez-vous que toutes vos modifications ont été validées et testées localement.<br>
+Créez une Pull Request (PR) pour fusionner vos changements de votre branche de fonctionnalité vers la branche main.<br>
+Une fois la PR approuvée, fusionnez-la.<br>
+Le workflow GitHub Actions se déclenchera automatiquement sur le push vers la branche main et gérera le processus de déploiement de bout en bout.<br>
 
 Si le déploiement échoue, vérifiez les logs du workflow dans l'onglet Actions de votre dépôt GitHub pour identifier l'étape responsable de l'échec.
 
