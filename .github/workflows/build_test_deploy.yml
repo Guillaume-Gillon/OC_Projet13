@@ -54,7 +54,9 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/oc_projet13:${{ github.sha }}
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/oc_projet13:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/oc_projet13:latest
 
   deploy:
     runs-on: ubuntu-latest
@@ -62,4 +64,4 @@ jobs:
     if: github.ref_name == 'main'
     steps:
       - name: Trigger Render Deploy Hook
-        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}?imgURL=${{ secrets.DOCKERHUB_USERNAME }}/oc_projet13:${{ github.sha }}
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
