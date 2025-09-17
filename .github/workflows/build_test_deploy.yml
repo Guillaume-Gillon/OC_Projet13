@@ -8,7 +8,7 @@ on:
       - 'docs/**'
       - '**.md'
       - '.github/**'
-  pull-request:
+  pull_request:
     branches: [ "main" ]
     paths-ignore:
       - '.readthedocs.yaml'
