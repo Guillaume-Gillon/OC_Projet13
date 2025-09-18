@@ -9,6 +9,13 @@ build:
   os: ubuntu-24.04
   tools:
     python: "3.13"
+  jobs:
+    post_checkout:
+      - |
+        if git diff --quiet HEAD^ HEAD -- docs/; then
+          echo "No changes in docs/, skipping build."
+          exit 183
+        fi
 
 # Build documentation in the "docs/" directory with Sphinx
 sphinx:
