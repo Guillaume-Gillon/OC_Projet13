@@ -2,8 +2,11 @@
 # L'image "slim" est plus petite et ne contient que les paquets essentiels, ce qui réduit la taille finale et les vulnérabilités.
 FROM python:3.12.3-slim
 
-ENV PYTHONUNBUFFERED=1 # Permet un accès plus direct aux journaux de logs (docker logs)
-ENV PYTHONDONTWRITEBYTECODE=1 # Empêche l'application de créer les __pycache__ pour optimiser la taille du conteneur.
+# Permet un accès plus direct aux journaux de logs (docker logs)
+ENV PYTHONUNBUFFERED=1
+
+# Empêche l'application de créer les __pycache__ pour optimiser la taille du conteneur.
+ENV PYTHONDONTWRITEBYTECODE=1
 
 # Crée un dossier "app" et le définit comme répertoire de travail. Toutes les commandes suivantes seront exécutées depuis ce dossier.
 WORKDIR /app
