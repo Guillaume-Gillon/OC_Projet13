@@ -21,7 +21,7 @@ class ProfilesIndexViewTest(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "index.html")
-        self.assertIn("Welcome to Holiday Homes", h1_texts)
+        self.assertIn("Welcome to HH", h1_texts)
 
     def test_template_page_not_found(self):
         """
